@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="OnlyFlanes - La única inteligencia artificial que genera fotos de flanes con los ingredientes que tu quieras."
+    />
+    <meta
+      name="keywords"
+      content="flanes, postres, dulces, búsqueda de flanes"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="ico" />
+    <title>OnlyFlanes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="index.js"></script>
+    <div class="container">
+      <img src="logo__.png" alt="OnlyFlanes - Logo " class="logo" />
+
+      <div class="search-box">
+        <input
+          id="dataInput"
+          type="text"
+          class="search-bar"
+          placeholder="De queso, con nata y en la playa"
+          maxlength="60"
+        />
+        <button id="btnBuscar" onclick="sendData()" class="search-button">
+          Buscar Flan
+        </button>
+      </div>
+      <div id="fotos" class="instagram-post">
+        <img id="foto" src="" class="dalle" />
+        <a
+          href="#"
+          id="whatsapp-share"
+          target="_blank"
+          style="display: none"
+          onclick="sendWhatsp() "
+        >
+          <img src="w.png" alt="WhatsApp" style="width: 30px; height: 30px" />
+        </a>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <p>
+          <a
+            href="https://s.click.aliexpress.com/e/_DE1O1PL?bz=300*250"
+            target="_blank"
+            ><img src="aliexpres.webp"
+          /></a>
+        </p>
+        <p>Cargando...</p>
+      </div>
+    </div>
+    <div id="cookieBanner" class="cookie-banner">
+      <p>
+        Este sitio web utiliza cookies para mejorar la experiencia del usuario.
+        Al utilizar nuestro sitio web, aceptas todas las cookies de acuerdo con
+        nuestra Política de Cookies.
+      </p>
+      <button id="acceptCookies">Aceptar</button>
+    </div>
+    <script>
+      // Función para ocultar el aviso de cookies cuando se hace clic en "Aceptar"
+      function hideCookieBanner() {
+        document.getElementById("cookieBanner").style.display = "none";
+        // Puedes almacenar una cookie aquí para recordar la elección del usuario
+      }
+
+      // Evento para mostrar el aviso de cookies solo si no se ha aceptado previamente
+      window.addEventListener("load", function () {
+        if (document.cookie.includes("cookiesAccepted=true")) {
+          document.getElementById("cookieBanner").style.display = "none";
+        }
+      });
+
+      // Evento para aceptar cookies y ocultar el aviso
+      document
+        .getElementById("acceptCookies")
+        .addEventListener("click", function () {
+          hideCookieBanner();
+          // Puedes almacenar una cookie aquí para recordar la elección del usuario
+          document.cookie =
+            "cookiesAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        });
+    </script>
+  </body>
+</html>
